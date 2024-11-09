@@ -20,7 +20,7 @@ from produccion import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.IniciarSesion, name='iniciarSesion'),
+    path('https://spontaneous-mermaid-5e6fd2.netlify.app/', views.IniciarSesion, name='iniciarSesion'),
     path('tareas/', views.Ver_tareas, name='tareas'),
     path('form_tareas/', views.Form_tareas, name='form_tarea'),
     path('logout/', views.Salir, name='logout'),
