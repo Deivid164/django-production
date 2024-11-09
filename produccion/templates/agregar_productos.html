@@ -1,0 +1,55 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<div class="container-fomrOption">
+
+    <form class="fonrOption1" method="post" autocomplete="off">
+        {% csrf_token %}
+        <label class="labelOption" for="nombre_a">Listas</label>
+        <input class="inputOption" type="text" id="nombre_a" name="nombre_a" placeholder="agregar opcion">
+
+        <label class="labelOption" for="nombre_b">Producto</label>
+        <input class="inputOption" type="text" id="nombre_b" name="nombre_b" placeholder="agregar opcion">
+
+        <label class="labelOption" for="nombre_c">Producto Terminado</label>
+        <input class="inputOption" type="text" id="nombre_c" name="nombre_c" placeholder="agregar opcion">
+
+        <button class="btnAgregar" type="submit" class="btn">Agregar</button>
+    </form>
+
+    <div class="container-delete">
+        <form class="fonrOption2" method="post" id="form_a" autocomplete="off">
+            {% csrf_token %}
+            <select class="selectOption" id="select_a" name="id" onchange="actualizarAccion('form_a', 'select_a', 'a')">
+                <option value="0">Selecciona una Lista</option>
+                {% for producto in productos_a %}
+                <option value="{{ producto.id }}">{{ producto.nombre }}</option>
+                {% endfor %}
+            </select>
+            <button class="btnEliminar" type="submit" onclick="eliminarOpcion(event, 'form_a')">Eliminar Opción</button>
+        </form>
+
+        <form class="fonrOption2" method="post" id="form_b" autocomplete="off">
+            {% csrf_token %}
+            <select class="selectOption" id="select_b" name="id" onchange="actualizarAccion('form_b', 'select_b', 'b')">
+                <option value="0">Selecciona un Producto</option>
+                {% for producto in productos_b %}
+                <option value="{{ producto.id }}">{{ producto.nombre }}</option>
+                {% endfor %}
+            </select>
+            <button class="btnEliminar" type="submit" onclick="eliminarOpcion(event, 'form_b')">Eliminar Opción</button>
+        </form>
+
+        <form class="fonrOption2" method="post" id="form_c">
+            {% csrf_token %}
+            <select class="selectOption" id="select_c" name="id" onchange="actualizarAccion('form_c', 'select_c', 'c')">
+                <option value="0">Selecciona un producto Terminado</option>
+                {% for producto in productos_c %}
+                <option value="{{ producto.id }}">{{ producto.nombre }}</option>
+                {% endfor %}
+            </select>
+            <button class="btnEliminar" type="submit" onclick="eliminarOpcion(event, 'form_c')">Elimina Opción</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,64 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.container-fomrOption{
+  text-align: start;
+  margin: 20px;
+  box-shadow: 1px 1px 2px 2px rgb(161, 161, 161);
+  padding: 4px;
+  width: 70%;
+}
+
+.fonrOption1{
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.fonrOption2{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  margin-bottom: 15px;
+  
+}
+
+.btnAgregar, .btnEliminar{
+  width: 130px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 400;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.inputOption,.selectOption{
+  height: 30px;
+  width: 450px;
+  font-size: 0.8em;
+  padding: 5px;
+}
+
+.selectOption{
+  height: 35px;
+  width: 413px;
+}
+
+.labelOption{
+  margin-left: 4px;
+  font-size: 0.8em;
+  font-family: sans-serif;
+}
+
+.tituloOption{
+  font-family: sans-serif;
+  font-size: 1em;
+}
+
+.container-delete{
+  margin-top: 50px;
+}

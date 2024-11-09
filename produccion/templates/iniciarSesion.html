@@ -1,0 +1,16 @@
+{% extends "_base.html" %}
+
+{% block content %}
+
+<div class="InicioSesion">
+  <h5>Inicio de sesión</h5>
+  <form method="POST" class="form-iniciarSesion" autocomplete="off">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button>Aceptar</button>
+  </form>
+  <p>
+    {{error}}
+  </p>
+</div>
+{% endblock %}

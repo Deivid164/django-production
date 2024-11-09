@@ -1,0 +1,90 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<!-- {{error}} -->
+<div class="container-form-tareas">
+  <form method="post" class="form_tareas" autocomplete="off">
+    {% csrf_token %}
+    
+    <div class="container-option">
+      <label for="Fecha">Fecha</label>
+      <input type="date" name="fecha" id="fecha" autofocus required>
+    </div>
+
+    <div class="container-option">
+      <label for="Hora Inicio">Hora Inicio</label>
+      <input type="time" name="horaInicio" id="hora" required>
+    </div>
+
+    <div class="container-option">
+      <label for="Linea">Linea</label>
+      <select id="linea_opciones" name="linea" required>
+        <option value=""></option>
+        {% for linea in productos_a %}
+          <option value="{{ linea.nombre }}">{{ linea.nombre }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="container-option">
+      <label for="producto">Producto</label>
+      <select id="producto" name="producto" required>
+        <option value=""></option>
+          {% for producto in productos_b %}
+            <option value="{{ producto.nombre }}">{{ producto.nombre }}</option>
+          {% endfor %}
+       </select>
+    </div>
+
+    <div class="container-option">
+      <label for="Trabajadores">Trabajadores</label>
+      <input type="trabajadores" name="trabajadores" required>
+    </div>
+
+    <div class="container-option">
+      <label for="Producto">Producto Terminado</label>
+      <select id="Producto_Terminado" name="productoTerminado" required>
+        <option value=""></option>
+        {% for productoTerminado in productos_c %}
+          <option value="{{ productoTerminado.nombre }}">{{ productoTerminado.nombre }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="container-option">
+      <label for="Und.Producidas">Unidades producidas</label>
+      <input type="number" min="0" name="undProducidas" required>
+    </div>
+
+    <div class="container-option">
+      <label for="Hora_termino">Hora de termino</label>
+      <input type="time" name="horaTermino" id="hora" required>
+    </div>
+
+    <div class="container-option">
+      <label for="cantidad">Cantidad</label>
+      <input type="number" min="0" name="cantidad" required>
+    </div>
+
+    <div class="container-option">
+      <label for="RotuloFecha">Rotulo Fecha</label>
+      <div class="container-RotuloFecha">
+        Una fecha<input type="checkbox" id="opcion1" name="fecha1" value="✔">
+        <strong>|</strong>
+        Dos fecha<input type="checkbox" id="opcion2" name="fecha2" value="✔">
+      </div>
+    </div>
+
+    <div class="container-btn-tarea">
+      <button class="btn-tareas" type="submit" value="Guardar">Guardar</button>
+      <button class="btn-tareas" type="reset">Limpiar</button>
+    </div>
+
+    {% if messages %}
+      {% for m in messages %}  
+        <p class="m">{{m}}</p>
+      {% endfor %}
+    {% endif %}
+  </form>
+</div>
+{% endblock %}

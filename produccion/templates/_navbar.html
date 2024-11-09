@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <h2 class="navbar-brand" href="/">Produccion diaria</h2>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a href="{% url 'form_tarea' %}" class="nav-link">crear tarea</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{% url 'tareas' %}" class="nav-link">tareas</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{% url 'agregar_productos' %}" class="nav-link">agregar opciones</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">salir</a>
+          </li>          
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>

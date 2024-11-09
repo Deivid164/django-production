@@ -1,0 +1,44 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<div class="container-tareas">
+  <div class="container-btnExcel">
+    <button id="btnExportar" class="btn btn-success "> Exportar a Excel</button>
+  </div>
+  <table id="tabla" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Hora inicio</th>
+        <th>Linea</th>
+        <th>Producto</th>
+        <th>Producto terminado</th>
+        <th>trabajadores</th>
+        <th>Und.Producidas</th>
+        <th>Rotulo Fecha uno</th>
+        <th>Rotulo Fecha dos</th>
+        <th>Cantidad</th>
+        <th>Hora de termino</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in date %}
+      <tr>
+        <td>{{i.fecha|date:"d-m-Y"}}</td>
+        <td>{{i.hora_inicio}}</td>
+        <td>{{i.linea}}</td>
+        <td>{{i.producto}}</td>
+        <td>{{i.producto_terminado}}</td>
+        <td>{{i.trabajadores}}</td>
+        <td>{{i.und_producidas}}</td>
+        <td>{{i.rotulo_fecha_fecha1|default:""}}</td>
+        <td>{{i.rotulo_fecha_fecha2|default:""}}</td>
+        <td>{{i.cantidad}}</td>
+        <td>{{i.hora_termino}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+.container-form-tareas{
+  width: 50%; /* Ancho del contenedor */ 
+  margin: 0 auto; /* Centra el contenedor */
+}
+
+table {
+  border-collapse: collapse;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+
+th,td{
+  font-size: 12px;
+}
+
+thead th {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+  background-color: rgb(245, 243, 243);
+}
+
+tbody td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.container-btnExcel{
+  float: right;
+  margin: 20px 10px 10px 0px;
+}
+
+#btnExportar{
+  padding: 0;
+  height: 40px;
+  text-align: center;
+}
+
+tr:nth-child(even) { 
+  background-color: #f2f2f2; 
+}
